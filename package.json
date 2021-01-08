@@ -1,0 +1,19 @@
+{
+  "name": "blackjack",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000b\u0000l\u0000a\u0000c\u0000k\u0000j\u0000a\u0000c\u0000k\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgk94/blackjack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgk94/blackjack/issues"
+  },
+  "homepage": "https://github.com/sgk94/blackjack#readme"
+}
