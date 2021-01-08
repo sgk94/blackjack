@@ -1,6 +1,5 @@
-/*---- Class ----*/
 
-class Deck {
+/*class Deck {
     constructer() {
         this.deck = [];
 
@@ -16,16 +15,12 @@ class Deck {
 };
 
 const deck1 = new Deck();
-console.log(deck1);
+console.log(deck1);*/
 
-/*---- App's State (variable) ----*/
+var msg = "hello";
 
-
-/*---- Cached Element References ----*/
-
-
-/*---- Event Listeners ----*/
+console.log(msg);
 
 
-/*---- Functions ----*/
+
 
