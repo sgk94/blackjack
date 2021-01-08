@@ -1,1 +1,3 @@
-import '../blackjack/app.js'
+export default function foo() {
+    console.log('hello world');
+}

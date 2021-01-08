@@ -13,10 +13,11 @@ class Deck {
             }
         }
     }
-}
+};
 
 const deck1 = new Deck();
 console.log(deck1);
+
 /*---- App's State (variable) ----*/
 
 
