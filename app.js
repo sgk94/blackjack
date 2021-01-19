@@ -1,8 +1,8 @@
-// Deck
+// Variables
 var deck = new Array();
 const suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
 const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
-const shoot = new Object();
+const chute = new Object();
 
 // Create the deck
 function createDeck (suits, values, deck) {
@@ -24,8 +24,9 @@ function createDeck (suits, values, deck) {
     console.log(deck);
 };
 
+// Shuffle the deck
 function shuffle (deck) {
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 1000; i++) {
         var l1 = Math.floor((Math.random() * deck.length));
         console.log(l1);
         var l2 = Math.floor((Math.random() * deck.length));
@@ -44,16 +45,7 @@ function init (suits, values, deck) {
 };
 
 init(suits, values, deck);
-// Create the shoot
-// function createShoot (deck, suits, values, card, shoot) {
-//     for (i = 0; i = 6; i++) {
-//         createDeck(suits, values, deck, card);
-//         shoot
-//     };
-//     console.log(shoot);
-// };
-// Functions
-// createShoot(deck, suits, values, card, shoot);
+
 
 
 
