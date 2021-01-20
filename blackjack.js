@@ -1,7 +1,7 @@
 class Chute {
   constructor(decks = 6) {
     this.cards = [];
-
+console.log(decks);
     for (let i = 0; i < decks; i++) {
       const deck = new Deck().getCards();
       this.cards = this.cards.concat(deck);
@@ -87,12 +87,22 @@ class Card {
 }
 
 const chute = new Chute();
+console.log(chute);
+console.log(chute.cards);
+class Player {
+  constructor() {
+    hand = [];
+  }
+}
+class Dealer extends Player {
 
+}
 
 
 //Flow of Blackjack
 /*
-- Chute is shuffled. 
+x Chute is shuffled. 
+- Create player/dealer class.
 - Dealer hands Player 1 one card face up
 - Dealer gives themself one card face up
 - Dealer gives Player 1 one card face up
