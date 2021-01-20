@@ -90,12 +90,20 @@ const chute = new Chute();
 
 
 
-//Needs for game to work
+//Flow of Blackjack
 /*
-- A dealer and a player
-- A board to play on
-- A button to deal
-- A button to hit
-- A button to stay
-- Calculate a win, bust, push.
+- Chute is shuffled. 
+- Dealer hands Player 1 one card face up
+- Dealer gives themself one card face up
+- Dealer gives Player 1 one card face up
+- Dealer gives themself one card face down
+- If player has 21 and dealer does not, player wins.
+- If player has 21 and dealer does too, push. 
+- If Dealer's face up card is a 10 or face card, dealer checks face down card to see if they have a natural.
+- If Dealer's face up card is not a 10 or a face card, dealer does not check the face down card.
+- Player decides whether to "stand" or "hit".
+- If player "stands", dealer unveils face down card.
+- If dealer is at 17 or more, dealer must stand.
+- If dealer is at 16 or less, dealer must draw cards until 17 or higher is reached.
+- If player "hits", player is given a card. If less than 21, player can choose to "stand" or "hit".
 */
