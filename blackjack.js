@@ -1,7 +1,6 @@
 class Chute {
   constructor(decks = 6) {
     this.cards = [];
-console.log(decks);
     for (let i = 0; i < decks; i++) {
       const deck = new Deck().getCards();
       this.cards = this.cards.concat(deck);
@@ -86,18 +85,31 @@ class Card {
   }
 }
 
-const chute = new Chute();
-console.log(chute);
-console.log(chute.cards);
 class Player {
   constructor() {
-    hand = [];
+    this.hand = [];
+    for (var i=0; i < 2; i++) {
+      this.hit();
+    }
+  }
+
+  hit() {
+   var hitCard = chute.drawCard();
+   this.hand.push(hitCard);
+  }
+  
+  stand() {
+    //do nothing
   }
 }
 class Dealer extends Player {
-
+  
 }
 
+const chute = new Chute();
+const player = new Player();
+
+console.log(player);
 
 //Flow of Blackjack
 /*
