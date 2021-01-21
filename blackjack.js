@@ -88,9 +88,17 @@ class Card {
 class Player {
   constructor() {
     this.hand = [];
+    //For test purposes adding two cards into the hand and then going to try checkValues func to test checking for Black Jack.
     for (var i=0; i < 2; i++) {
       this.hit();
     }
+    this.checkValues()
+  }
+
+  checkValues() {
+    Deck.values.A
+    this.hand
+    
   }
 
   hit() {
@@ -110,6 +118,7 @@ const chute = new Chute();
 const player = new Player();
 
 console.log(player);
+console.log(Deck.values.A)
 
 //Flow of Blackjack
 /*
