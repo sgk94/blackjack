@@ -33,7 +33,7 @@ class Deck {
   static suits = ['Heart', 'Spade', 'Clove', 'Spade'];
   static numbers = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
   static values = {
-    'A': 1,
+    'A': 11,
     '2': 2,
     '3': 3,
     '4': 4,
@@ -92,13 +92,39 @@ class Player {
     for (var i=0; i < 2; i++) {
       this.hit();
     }
-    this.checkValues()
+    this.checkValues();
   }
 
   checkValues() {
-    Deck.values.A
-    this.hand
-    
+    var obj = Deck.values;
+    var c1 = this.hand[0];
+    var c2 = this.hand[1];
+  
+    for(const val in obj) {
+      //console.log(`obj.${val} = ${obj[val]}`);
+      if (c1.value === val) {
+        console.log(typeof(c1.value));
+        c1.value = obj[val];
+        console.log(`suit:  ${c1.suit} and value: ${c1.value}`);
+        console.log(`val = ${obj[val]}`);
+        console.log(typeof(c1.value));
+      }
+
+      if (c2.value === val) {
+        console.log(typeof(c2.value));
+        c2.value = obj[val];
+        console.log(`suit:  ${c2.suit} and value: ${c2.value}`);
+        console.log(`val = ${obj[val]}`);
+        console.log(typeof(c2.value));
+      }
+
+    }
+      if (c1.value + c2.value === 21) {
+        console.log("BLACK JACK YO");
+        
+      } else {
+        console.log("Hit or Stand?");
+      }
   }
 
   hit() {
@@ -117,13 +143,9 @@ class Dealer extends Player {
 const chute = new Chute();
 const player = new Player();
 
-console.log(player);
-console.log(Deck.values.A)
-
 //Flow of Blackjack
 /*
 x Chute is shuffled. 
-- Create player/dealer class.
 - Dealer hands Player 1 one card face up
 - Dealer gives themself one card face up
 - Dealer gives Player 1 one card face up
