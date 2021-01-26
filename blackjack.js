@@ -96,35 +96,64 @@ class Player {
   }
 
   checkValues() {
-    var obj = Deck.values;
-    var c1 = this.hand[0];
-    var c2 = this.hand[1];
+    // * Having this in a variable is fine, but name it something descriptive. 'obj', doesn't explain at all what this is.
+    // var obj = Deck.values;
+    
+    // * Same here. It doesn't take much more effort to just type out card1/card2
+    // var c1 = this.hand[0];
+    // var c2 = this.hand[1];
+
+    const cardValues = Deck.values;
+
+    //  * Having the cards explicitely listed here is fine for this specific test, but won't scale with how the game is actually played
+    //  * since it's likely that you would wand to use the checkValues/checkHand method beyond the first two cards.
+    // const card1 = this.hand[0];
+    // const card2 = this.hand[1];
+    let sum = 0;
   
-    for(const val in obj) {
-      //console.log(`obj.${val} = ${obj[val]}`);
-      if (c1.value === val) {
-        console.log(typeof(c1.value));
-        c1.value = obj[val];
-        console.log(`suit:  ${c1.suit} and value: ${c1.value}`);
-        console.log(`val = ${obj[val]}`);
-        console.log(typeof(c1.value));
-      }
+    // * This doesn't make any sense beacuse cardValues/obj is an object. Which means you get a lookup time of O(1). By wrapping it into
+    // * a for loop you're making the lookup O(n)
+    // for(const val in obj) {
+    //   //console.log(`obj.${val} = ${obj[val]}`);
 
-      if (c2.value === val) {
-        console.log(typeof(c2.value));
-        c2.value = obj[val];
-        console.log(`suit:  ${c2.suit} and value: ${c2.value}`);
-        console.log(`val = ${obj[val]}`);
-        console.log(typeof(c2.value));
-      }
+    //   // * By doing this you're modifying the actual object/instance of the class Card. It's also unnecessary since you can access
+    //   // * the values with cardValues and just add it to a variable that tracks the sum.
+    //   if (c1.value === val) {
+    //     console.log(typeof(c1.value));
+    //     c1.value = obj[val];
+    //     console.log(`suit:  ${c1.suit} and value: ${c1.value}`);
+    //     console.log(`val = ${obj[val]}`);
+    //     console.log(typeof(c1.value));
+    //   }
 
-    }
-      if (c1.value + c2.value === 21) {
-        console.log("BLACK JACK YO");
+    //   if (c2.value === val) {
+    //     console.log(typeof(c2.value));
+    //     c2.value = obj[val];
+    //     console.log(`suit:  ${c2.suit} and value: ${c2.value}`);
+    //     console.log(`val = ${obj[val]}`);
+    //     console.log(typeof(c2.value));
+    //   }
+
+    // }
+      // if (c1.value + c2.value === 21) {
+      //   console.log("BLACK JACK YO");
         
-      } else {
-        console.log("Hit or Stand?");
-      }
+      // } else {
+      //   console.log("Hit or Stand?");
+      // }
+    
+    for (let card of this.hand) {
+      sum += cardValues[card.value];
+    }
+
+    console.log(this.hand);
+    console.log(sum);
+
+    if (sum === 21) {
+      console.log("BLACK JACK YO");
+    } else {
+      console.log("Hit or Stand?");
+    }
   }
 
   hit() {
